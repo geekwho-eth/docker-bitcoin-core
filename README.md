@@ -10,8 +10,9 @@ A bitcoin-core docker image with support for the following platforms:
 
 ## Tags
 
-- `25.0`, `25`, `latest` ([25/Dockerfile](https://github.com/geekwho-eth/docker-bitcoin-core/blob/master/25/Dockerfile)) [**multi-arch**]
+- `25.0-ubuntu`, `25-ubuntu`, `latest` ([25/ubuntu/Dockerfile](https://github.com/geekwho-eth/docker-bitcoin-core/blob/master/ubuntu/25/Dockerfile)) [**multi-arch**]
 - `25.0-alpine`, `25-alpine` ([25/alpine/Dockerfile](https://github.com/geekwho-eth/docker-bitcoin-core/blob/master/25/alpine/Dockerfile))
+- `25.0-alpine-tor`, `25-alpine-tor` ([25/alpine/tor/Dockerfile](https://github.com/geekwho-eth/docker-bitcoin-core/blob/master/25/alpine/tor/Dockerfile))
 
 - `24.0.1`, `24`, `latest` ([24/Dockerfile](https://github.com/ruimarinho/docker-bitcoin-core/blob/master/24/Dockerfile)) [**multi-arch**]
 - `24.0.1-alpine`, `24-alpine` ([24/alpine/Dockerfile](https://github.com/ruimarinho/docker-bitcoin-core/blob/master/24/alpine/Dockerfile))
