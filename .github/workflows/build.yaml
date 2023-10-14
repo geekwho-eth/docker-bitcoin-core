@@ -18,12 +18,12 @@ jobs:
     strategy:
       matrix:
         image:
-          #- name: 25-alpine
-          #  context: "./25/alpine"
-          #- name: 25-alpine-tor
-          #  context: "./25/alpine/tor"
-          #- name: 25-ubuntu
-          #  context: "./25/ubuntu"
+          - name: 25-alpine
+            context: "./25/alpine"
+          - name: 25-alpine-tor
+            context: "./25/alpine/tor"
+          - name: 25-ubuntu
+            context: "./25/ubuntu"
           - name: latest
             context: "./25/ubuntu"
     steps:
