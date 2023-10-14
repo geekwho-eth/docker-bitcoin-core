@@ -144,10 +144,6 @@ ENV PATH=${BITCOIN_PREFIX}/bin:$PATH
 COPY --from=bitcoin-core /opt /opt
 COPY docker-entrypoint.sh /entrypoint.sh
 
-# config tor
-RUN apk --no-cache add --update \
-  bash alpine-sdk gnupg libevent libevent-dev zlib zlib-dev openssl openssl-dev
-
 # tor user and group
 ARG TOR_UID=2000
 ARG TOR_GID=2001
