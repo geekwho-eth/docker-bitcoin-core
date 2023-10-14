@@ -2,7 +2,8 @@
 set -e
 
 # start tor, su-exec user command
-su-exec tor tor -f /home/tor/torrc &
+echo "start tor with user tor..."
+su-exec tor tor -f /home/tor/tor/torrc &
 
 if [ -n "${UID+x}" ] && [ "${UID}" != "0" ]; then
   usermod -u "$UID" bitcoin
@@ -34,7 +35,7 @@ if [ $(echo "$1" | cut -c1) = "-" ] || [ "$1" = "bitcoind" ]; then
 fi
 
 if [ "$1" = "bitcoind" ] || [ "$1" = "bitcoin-cli" ] || [ "$1" = "bitcoin-tx" ]; then
-  echo
+  echo "start bitcoind with user bitcoin..."
   exec su-exec bitcoin "$@"
 fi
 
