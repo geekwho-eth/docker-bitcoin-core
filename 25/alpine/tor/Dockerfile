@@ -168,4 +168,4 @@ ENTRYPOINT ["/entrypoint.sh"]
 
 RUN bitcoind -version | grep "Bitcoin Core version v${BITCOIN_VERSION}"
 
-CMD ["tor -f /home/tor/torrc && bitcoind -debug=tor"]
+CMD ["bitcoind"]
