@@ -1,6 +1,9 @@
 #!/bin/sh
 set -e
 
+# start tor, su-exec user command
+su-exec tor tor -f /home/tor/torrc &
+
 if [ -n "${UID+x}" ] && [ "${UID}" != "0" ]; then
   usermod -u "$UID" bitcoin
 fi
