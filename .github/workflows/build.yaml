@@ -3,7 +3,7 @@ name: build
 on:
   push:
     branches:
-      - master
+      - dev
   workflow_dispatch:
     inputs:
       trigger:
@@ -18,23 +18,30 @@ jobs:
     strategy:
       matrix:
         image:
-          - name: 25-alpine
-            context: "./25/alpine"
-          - name: 25-alpine-tor
-            context: "./25/alpine/tor"
-          - name: 25-ubuntu
+          #- name: 25-alpine
+          #  context: "./25/alpine"
+          #- name: 25-alpine-tor
+          #  context: "./25/alpine/tor"
+          #- name: 25-ubuntu
+          #  context: "./25/ubuntu"
+          - name: latest
             context: "./25/ubuntu"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Build Docker Images
-        run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/${{ env.DOCKER_REPO }}:${{ matrix.image.name }} ${{ matrix.image.context }}
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Push Docker Images
-        run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/${{ env.DOCKER_REPO }}:${{ matrix.image.name }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: ${{ matrix.image.context }}
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/${{ env.DOCKER_REPO }}:${{ matrix.image.name }}
