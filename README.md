@@ -23,8 +23,9 @@ A bitcoin-core docker image with support for Directory structure as follows:
 - `25.0-alpine-tor`, `25-alpine-tor` ([25/alpine/tor/Dockerfile](https://github.com/geekwho-eth/docker-bitcoin-core/blob/master/25/alpine/tor/Dockerfile))
 
 [![build](https://github.com/geekwho-eth/docker-bitcoin-core/actions/workflows/build.yaml/badge.svg)](https://github.com/geekwho-eth/docker-bitcoin-core/actions/workflows/build.yaml)
-
-[![caijiamx/bitcoin-core][docker-pulls-image]][docker-hub-url] [![caijiamx/bitcoin-core][docker-stars-image]][docker-hub-url] [![caijiamx/bitcoin-core][docker-size-image]][docker-hub-url]
+[![Docker Pulls](https://img.shields.io/docker/pulls/caijiamx/bitcoin-core.svg)](https://hub.docker.com/r/caijiamx/bitcoin-core)
+[![Docker Stars](https://img.shields.io/docker/stars/caijiamx/bitcoin-core.svg)](https://hub.docker.com/r/caijiamx/bitcoin-core)
+[![Docker Image Size (latest)](https://img.shields.io/docker/image-size/caijiamx/bitcoin-core/latest.svg)](https://hub.docker.com/r/caijiamx/bitcoin-core)
 
 
 ## Origin README.md
