@@ -11,14 +11,14 @@ A bitcoin-core docker image with support for Directory structure as follows:
 │       ├── Dockerfile
 │       ├── docker-entrypoint.sh
 │       └── torrc
-└── ubuntu
+└── debian
     ├── Dockerfile
     └── docker-entrypoint.sh
 ```
 
 ## Tags
 
-- `25.0-ubuntu`, `25-ubuntu`, `latest` ([25/ubuntu/Dockerfile](https://github.com/geekwho-eth/docker-bitcoin-core/blob/master/25/ubuntu/Dockerfile))
+- `25.0-debian`, `25-debian`, `latest` ([25/debian/Dockerfile](https://github.com/geekwho-eth/docker-bitcoin-core/blob/master/25/debian/Dockerfile))
 - `25.0-alpine`, `25-alpine` ([25/alpine/Dockerfile](https://github.com/geekwho-eth/docker-bitcoin-core/blob/master/25/alpine/Dockerfile))
 - `25.0-alpine-tor`, `25-alpine-tor` ([25/alpine/tor/Dockerfile](https://github.com/geekwho-eth/docker-bitcoin-core/blob/master/25/alpine/tor/Dockerfile))
 

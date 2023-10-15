@@ -1,8 +1,8 @@
 FROM debian:bookworm-slim as builder
 
-LABEL maintainer.0="João Fonseca (@joaopaulofonseca)" \
-  maintainer.1="Pedro Branco (@pedrobranco)" \
-  maintainer.2="Rui Marinho (@ruimarinho)"
+LABEL maintainer="GeekWho <caijiamx@gmail.com>"
+LABEL version="1.0"
+LABEL description="A bitcoin-core docker image"
 
 RUN apt-get update -y \
   && apt-get install -y ca-certificates curl git gnupg gosu python3 wget --no-install-recommends \
