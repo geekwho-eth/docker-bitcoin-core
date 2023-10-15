@@ -31,7 +31,7 @@ if [ $(echo "$1" | cut -c1) = "-" ] || [ "$1" = "bitcoind" ]; then
 fi
 
 if [ "$1" = "bitcoind" ] || [ "$1" = "bitcoin-cli" ] || [ "$1" = "bitcoin-tx" ]; then
-  echo
+  echo "start bitcoind with user bitcoin..."
   exec gosu bitcoin "$@"
 fi
 

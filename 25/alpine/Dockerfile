@@ -94,9 +94,9 @@ FROM alpine
 ARG UID=100
 ARG GID=101
 
-LABEL maintainer.0="João Fonseca (@joaopaulofonseca)" \
-  maintainer.1="Pedro Branco (@pedrobranco)" \
-  maintainer.2="Rui Marinho (@ruimarinho)"
+LABEL maintainer="GeekWho <caijiamx@gmail.com>"
+LABEL version="1.0"
+LABEL description="A bitcoin-core docker image"
 
 RUN addgroup bitcoin --gid ${GID} --system
 RUN adduser --uid ${UID} --system bitcoin --ingroup bitcoin
