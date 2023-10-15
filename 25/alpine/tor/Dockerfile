@@ -153,6 +153,7 @@ RUN addgroup tor --gid ${TOR_GID}
 RUN adduser -s /bin/bash -D -u ${TOR_UID} tor --ingroup tor
 RUN mkdir -p /var/run/tor && chown -R tor:tor /var/run/tor && chmod 2700 /var/run/tor
 RUN mkdir -p /home/tor/tor && chown -R tor:tor /home/tor/tor  && chmod 2700 /home/tor/tor
+RUN mkdir -p /var/log/tor && chown -R tor:tor /var/log/tor  && chmod 2700 /var/log/tor
 
 COPY ./torrc /home/tor/tor/torrc
 COPY --from=tor /usr/local/ /usr/local/

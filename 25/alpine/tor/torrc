@@ -11,7 +11,8 @@ CookieAuthentication 1
 CookieAuthFileGroupReadable 1
 CookieAuthFile /var/run/tor/control.authcookie
 
-Log [handshake]debug [*]notice stderr
+Log [handshake]debug file /var/log/tor/handshake.log
+Log notice file /var/log/tor/notice.log
 
 HiddenServiceDir /home/tor/tor/hidden_service_v3/
 HiddenServiceVersion 3
