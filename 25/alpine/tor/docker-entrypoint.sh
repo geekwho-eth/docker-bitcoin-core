@@ -39,5 +39,5 @@ if [ "$1" = "bitcoind" ] || [ "$1" = "bitcoin-cli" ] || [ "$1" = "bitcoin-tx" ];
   exec su-exec bitcoin "$@"
 fi
 
-echo
+echo " run defalut command with root..."
 exec "$@"
