@@ -27,6 +27,8 @@ jobs:
             context: "./25/debian"
           - name: latest
             context: "./25/debian"
+          - name: 25-ubuntu
+            context: "./25/ubuntu"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
