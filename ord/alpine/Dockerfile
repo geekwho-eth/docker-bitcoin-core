@@ -2,7 +2,7 @@
 FROM alpine as builder
 
 RUN sed -i 's/http\:\/\/dl-cdn.alpinelinux.org/https\:\/\/alpine.global.ssl.fastly.net/g' /etc/apk/repositories
-RUN apk --no-cache add autoconf automake build-base libressl
+RUN apk --no-cache add autoconf automake build-base libressl bash
 
 # install.sh
 ENV ORD_INSTALL_SH="https://raw.githubusercontent.com/ordinals/ord/master/install.sh"
