@@ -47,6 +47,6 @@ EXPOSE 8080
 
 ENTRYPOINT ["/entrypoint.sh"]
 
-RUN ord --version | grep "ord"
+# RUN ord --version | grep "ord"
 
 CMD ["ord","--config","$ORD_YAML","--rpc-url","$ORD_RPC_URL","server","--http-port","8080"]
