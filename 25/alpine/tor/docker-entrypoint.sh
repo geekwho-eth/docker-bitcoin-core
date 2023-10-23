@@ -10,7 +10,11 @@ if [ -n "${UID+x}" ] && [ "${UID}" != "0" ]; then
 fi
 
 if [ -n "${GID+x}" ] && [ "${GID}" != "0" ]; then
-  groupmod -g "$GID" bitcoin
+  if grep -q ":$GID:" /etc/group; then # if group exists
+    usermod -a -G $GID bitcoin # Add USER_NAME to Group ID HOST_GID
+  else
+    groupmod -g "$GID" bitcoin # Change the group ID to HOST_GID
+  fi
 fi
 
 echo "$0: assuming uid:gid for bitcoin:bitcoin of $(id -u bitcoin):$(id -g bitcoin)"
@@ -25,9 +29,9 @@ if [ $(echo "$1" | cut -c1) = "-" ] || [ "$1" = "bitcoind" ]; then
   mkdir -p "$BITCOIN_DATA"
   chmod 700 "$BITCOIN_DATA"
   # Fix permissions for home dir.
-  chown -R bitcoin:bitcoin "$(getent passwd bitcoin | cut -d: -f6)"
+  chown -R bitcoin:$GID "$(getent passwd bitcoin | cut -d: -f6)"
   # Fix permissions for bitcoin data dir.
-  chown -R bitcoin:bitcoin "$BITCOIN_DATA"
+  chown -R bitcoin:$GID "$BITCOIN_DATA"
 
   echo "$0: setting data directory to $BITCOIN_DATA"
 
@@ -36,7 +40,7 @@ fi
 
 if [ "$1" = "bitcoind" ] || [ "$1" = "bitcoin-cli" ] || [ "$1" = "bitcoin-tx" ]; then
   echo "start bitcoind with user bitcoin..."
-  exec su-exec bitcoin "$@"
+  exec su-exec bitcoin:$GID "$@"
 fi
 
 echo " run defalut command with root..."
