@@ -20,7 +20,7 @@ echo "$0: assuming uid:gid for ${USER_NAME}:${USER_NAME} of $(id -u $USER_NAME):
 # Get the home directory of $USER_NAME
 home_dir=$(getent passwd $USER_NAME | cut -d: -f6)
 # Change ownership of the home directory
-chown -R $USER_NAME:$USER_NAME ${home_dir}
+chown -R $USER_NAME:$HOST_GID ${home_dir}
 echo "reset home dir permissions for user ${USER_NAME} done."
 echo "start tapd with user ${USER_NAME}..."
 exec su-exec $USER_NAME "$@" # Execute the command with the specified user
