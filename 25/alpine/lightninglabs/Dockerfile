@@ -1,5 +1,5 @@
-# Build stage for compiled artifacts
-FROM lightninglabs/bitcoin-core:25-alpine
+# Build stage for compiled artifacts, only for linux/amd64
+FROM --platform=linux/amd64 lightninglabs/bitcoin-core:25-alpine
 
 # Map host user uid and gid, juse same as UID and GID in base image
 ARG HOST_UID=100
