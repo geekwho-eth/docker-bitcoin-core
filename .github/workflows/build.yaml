@@ -35,6 +35,8 @@ jobs:
             context: "./lnd/alpine"
           - name: taproot-assets-v0.3.0-alpha
             context: "./tapd/alpine"
+          - name: 25-alpine-lightninglabs
+            context: "./25/alpine/lightninglabs"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
