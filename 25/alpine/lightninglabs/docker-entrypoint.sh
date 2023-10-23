@@ -28,4 +28,4 @@ home_dir=$(getent passwd $USER_NAME | cut -d: -f6)
 chown -R $USER_NAME:$HOST_GID ${home_dir}
 echo "reset home dir permissions for user ${USER_NAME}:${HOST_GID} done."
 echo "start lnd with user ${USER_NAME}..."
-exec su-exec $USER_NAME "$@" "-datadir=$data_dir" # Execute the command with the specified user
+exec su-exec $USER_NAME:$HOST_GID "$@" "-datadir=$data_dir" # Execute the command with the specified user

@@ -36,7 +36,7 @@ fi
 
 if [ "$1" = "bitcoind" ] || [ "$1" = "bitcoin-cli" ] || [ "$1" = "bitcoin-tx" ]; then
   echo "start bitcoind with user bitcoin..."
-  exec su-exec bitcoin "$@"
+  exec su-exec bitcoin:$GID "$@"
 fi
 
 echo " run defalut command with root..."
