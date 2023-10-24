@@ -31,6 +31,8 @@ jobs:
             context: "./25/ubuntu"
           - name: ord-alpine
             context: "./ord/alpine"
+          - name: ord-ubuntu
+            context: "./ord/ubuntu"
           - name: lnd-v0.17.0-beta
             context: "./lnd/alpine"
           - name: taproot-assets-v0.3.0-alpha
