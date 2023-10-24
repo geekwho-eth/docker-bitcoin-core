@@ -25,9 +25,9 @@ Highlight:
 
 [More Details](25/README.md)
 
-## Ord Docker Image
+## Ordinals Ord Docker Image
 
-This Docker image is built to run Bitcoin Core and ord.
+This Docker image is built to run ordinals ord.
 
 Highlight:
 1. Build the image based on the alpine image.
