@@ -22,5 +22,5 @@ home_dir=$(getent passwd $USER_NAME | cut -d: -f6)
 # Change ownership of the home directory
 chown -R $USER_NAME:$HOST_GID ${home_dir}
 echo "reset home dir permissions for user ${USER_NAME}:${HOST_GID} done."
-echo "start lnd with user ${USER_NAME}..."
+echo "start ${USER_NAME} with user ${USER_NAME}..."
 exec su-exec $USER_NAME:$HOST_GID "$@" # Execute the command with the specified user
