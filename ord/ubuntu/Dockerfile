@@ -5,7 +5,7 @@ LABEL version="1.0"
 LABEL description="A bitcoin-core docker image"
 
 RUN apt-get update -y \
-  && apt-get install -y ca-certificates curl wget --no-install-recommends \
+  && apt-get install -y ca-certificates wget curl --no-install-recommends \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
@@ -34,7 +34,7 @@ ENV BITCOIN_RPC_LISTEN=127.0.0.1:8332
 RUN groupadd --gid ${HOST_GID} ${USER_GROUP} \
   && useradd --create-home --no-log-init -u ${HOST_UID} -g ${HOST_GID} ${USER_NAME} \
   && apt-get update -y \
-  && apt-get install -y gosu --no-install-recommends \
+  && apt-get install -y gosu curl --no-install-recommends \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
