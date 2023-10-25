@@ -8,6 +8,7 @@ This is a project that includes multiple images, each with its own features and 
 - [Ord Docker Image](ord/README.md)
 - [Lnd Images](lnd/README.md)
 - [Taproot Assets Images](tapd/README.md)
+- [Lightning Terminal Images](litd/README.md)
 
 ## Bitcoin Core Docker Image
 
@@ -57,3 +58,14 @@ Highlight:
 3. Resolve the user home directory permissions issue.
 
 [More Details](tapd/README.md)
+
+## Lightning Terminal Docker Image
+
+This Docker image is based on [lightninglabs/lightning-terminal](https://hub.docker.com/r/lightninglabs/lightning-terminal) and adds some customizations.
+
+Highlight:
+1. Build the image based on the lightninglabs/lightning-terminal image.
+2. Run lnd as a non-root user.
+3. Resolve the user home directory permissions issue.
+
+[More Details](litd/README.md)
