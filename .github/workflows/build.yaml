@@ -59,4 +59,4 @@ jobs:
           context: ${{ matrix.image.context }}
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/${{ env.DOCKER_REPO }}:${{ matrix.image.name }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.DOCKER_REPO }}:${{ matrix.image.name }}
