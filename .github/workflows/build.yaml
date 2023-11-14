@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     # use strategy matrix build images
     env:
-      DOCKER_REPO: "bitcoin-core"
+      DOCKERHUB_REPO: "bitcoin-core"
     strategy:
       matrix:
         image:
@@ -59,4 +59,4 @@ jobs:
           context: ${{ matrix.image.context }}
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.DOCKER_REPO }}:${{ matrix.image.name }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.DOCKERHUB_REPO }}:${{ matrix.image.name }}
