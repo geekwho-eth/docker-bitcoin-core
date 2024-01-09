@@ -31,6 +31,16 @@ jobs:
             context: "./25/ubuntu"
           - name: 25-lightninglabs-alpine
             context: "./25/alpine/lightninglabs"
+          - name: 26-alpine
+            context: "./26/alpine"
+          - name: 26-debian
+            context: "./26/debian"
+          - name: latest
+            context: "./26/debian"
+          - name: 26-ubuntu
+            context: "./26/ubuntu"
+          - name: 26-lightninglabs-alpine
+            context: "./26/alpine/lightninglabs"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
