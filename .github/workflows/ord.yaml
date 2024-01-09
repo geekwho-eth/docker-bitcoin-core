@@ -1,4 +1,4 @@
-name: build
+name: ord
 
 on:
   push:
@@ -19,32 +19,10 @@ jobs:
     strategy:
       matrix:
         image:
-          - name: 25-alpine
-            context: "./25/alpine"
-          #- name: 25-alpine-tor
-          #  context: "./25/alpine/tor"
-          - name: 25-debian
-            context: "./25/debian"
-          - name: latest
-            context: "./25/debian"
-          - name: 25-ubuntu
-            context: "./25/ubuntu"
-          - name: 25-lightninglabs-alpine
-            context: "./25/alpine/lightninglabs"
           #- name: ord-alpine
           #  context: "./ord/alpine"
           - name: ord-ubuntu
             context: "./ord/ubuntu"
-          - name: lnd-v0.17.0-beta-alpine
-            context: "./lnd/alpine/v0.17.0-beta"
-          - name: lnd-v0.17.1-beta-alpine
-            context: "./lnd/alpine/v0.17.1-beta"
-          - name: taproot-assets-v0.3.0-alpha-alpine
-            context: "./tapd/alpine/v0.3.0-alpha"
-          - name: taproot-assets-v0.3.1-alpha-alpine
-            context: "./tapd/alpine/v0.3.1-alpha"
-          - name: litd-v0.12.0-alpha-alpine
-            context: "./litd/alpine/v0.12.0-alpha"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
