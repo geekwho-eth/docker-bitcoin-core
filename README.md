@@ -4,7 +4,7 @@ This is a project that includes multiple images, each with its own features and 
 
 ## Image List
 
-- [Bitcoin Core Docker Image](25/README.md)
+- [Bitcoin Core Docker Image](26/README.md)
 - [Ord Docker Image](ord/README.md)
 - [Lnd Images](lnd/README.md)
 - [Taproot Assets Images](tapd/README.md)
@@ -24,7 +24,7 @@ Highlight:
 2. Run lnd as a non-root user.
 3. Resolve the user home directory permissions issue.
 
-[More Details](25/README.md)
+[More Details](26/README.md)
 
 ## Ordinals Ord Docker Image
 
