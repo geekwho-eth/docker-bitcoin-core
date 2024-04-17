@@ -10,7 +10,7 @@ RUN apt-get update -y \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ARG TARGETPLATFORM
-ENV BITCOIN_VERSION=7.0
+ENV BITCOIN_VERSION=27.0
 ENV SIGS_REPO_URL="https://github.com/bitcoin-core/guix.sigs.git"
 ENV SIGS_CLONE_DIR="guix.sigs"
 ENV VERIFY_SCRIPT_URL="https://raw.githubusercontent.com/bitcoin/bitcoin/master/contrib/verify-binaries/verify.py"
