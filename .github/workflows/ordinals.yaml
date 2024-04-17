@@ -1,4 +1,4 @@
-name: ord
+name: ordinals
 
 on:
   push:
