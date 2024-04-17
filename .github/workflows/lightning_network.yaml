@@ -1,4 +1,4 @@
-name: lighting_network
+name: lightning_network
 
 on:
   push:
