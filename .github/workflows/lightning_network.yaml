@@ -20,21 +20,21 @@ jobs:
       matrix:
         image:
           - name: lnd-v0.17.0-beta-alpine
-            context: "./lnd/alpine/v0.17.0-beta"
+            context: "./layer2/lightning_network/lnd/alpine/v0.17.0-beta"
           - name: lnd-v0.17.1-beta-alpine
-            context: "./lnd/alpine/v0.17.1-beta"
+            context: "./layer2/lightning_network/lnd/alpine/v0.17.1-beta"
           - name: lnd-v0.17.3-beta-alpine
-            context: "./lnd/alpine/v0.17.3-beta"
+            context: "./layer2/lightning_network/lnd/alpine/v0.17.3-beta"
           - name: taproot-assets-v0.3.0-alpha-alpine
-            context: "./tapd/alpine/v0.3.0-alpha"
+            context: "./layer2/lightning_network/tapd/alpine/v0.3.0-alpha"
           - name: taproot-assets-v0.3.1-alpha-alpine
-            context: "./tapd/alpine/v0.3.1-alpha"
+            context: "./layer2/lightning_network/tapd/alpine/v0.3.1-alpha"
           - name: taproot-assets-v0.3.2-alpha-alpine
-            context: "./tapd/alpine/v0.3.2-alpha"
+            context: "./layer2/lightning_network/tapd/alpine/v0.3.2-alpha"
           - name: litd-v0.12.0-alpha-alpine
-            context: "./litd/alpine/v0.12.0-alpha"
+            context: "./layer2/lightning_network/litd/alpine/v0.12.0-alpha"
           - name: litd-v0.12.2-alpha-alpine
-            context: "./litd/alpine/v0.12.2-alpha"
+            context: "./layer2/lightning_network/litd/alpine/v0.12.2-alpha"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
