@@ -10,7 +10,7 @@ This is a project that includes multiple images, each with its own features and 
 
 ## Bitcoin Core Docker Image
 
-[![build](https://github.com/geekwho-eth/docker-bitcoin-core/actions/workflows/build.yaml/badge.svg)](https://github.com/geekwho-eth/docker-bitcoin-core/actions/workflows/bitcoin_core.yaml)
+[![bitcoin_core](https://github.com/geekwho-eth/docker-bitcoin-core/actions/workflows/bitcoin_core.yaml/badge.svg)](https://github.com/geekwho-eth/docker-bitcoin-core/actions/workflows/bitcoin_core.yaml)
 [![Docker Pulls](https://img.shields.io/docker/pulls/caijiamx/bitcoin-core.svg)](https://hub.docker.com/r/caijiamx/bitcoin-core)
 [![Docker Stars](https://img.shields.io/docker/stars/caijiamx/bitcoin-core.svg)](https://hub.docker.com/r/caijiamx/bitcoin-core)
 [![Docker Image Size (latest)](https://img.shields.io/docker/image-size/caijiamx/bitcoin-core/latest.svg)](https://hub.docker.com/r/caijiamx/bitcoin-core)
