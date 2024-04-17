@@ -22,7 +22,7 @@ jobs:
           #- name: ord-alpine
           #  context: "./ord/alpine"
           - name: ord-ubuntu
-            context: "./ord/ubuntu"
+            context: "./layer1/ordinals/ord/ubuntu"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
