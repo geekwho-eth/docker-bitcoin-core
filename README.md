@@ -5,7 +5,6 @@ This is a project that includes multiple images, each with its own features and 
 ## Image List
 
 - [Bitcoin Core Docker Image](27/README.md)
-- [Lightning network Images](layer2/lightning_network/README.md)
 
 ## Bitcoin Core Docker Image
 
