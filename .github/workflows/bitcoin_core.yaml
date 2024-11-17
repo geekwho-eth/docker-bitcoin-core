@@ -25,8 +25,6 @@ jobs:
           #  context: "./25/alpine/tor"
           - name: 25-debian
             context: "./25/debian"
-          - name: latest
-            context: "./25/debian"
           - name: 25-ubuntu
             context: "./25/ubuntu"
           - name: 25-lightninglabs-alpine
@@ -34,8 +32,6 @@ jobs:
           - name: 26-alpine
             context: "./26/alpine"
           - name: 26-debian
-            context: "./26/debian"
-          - name: latest
             context: "./26/debian"
           - name: 26-ubuntu
             context: "./26/ubuntu"
@@ -45,12 +41,14 @@ jobs:
             context: "./27/alpine"
           - name: 27-debian
             context: "./27/debian"
+          - name: 28-alpine
+            context: "./28/alpine"
+          - name: 28-debian
+            context: "./28/debian"
+          - name: 28-ubuntu
+            context: "./28/ubuntu"
           - name: latest
-            context: "./27/debian"
-          - name: 27-ubuntu
-            context: "./27/ubuntu"
-          #- name: 27-lightninglabs-alpine
-          #  context: "./27/alpine/lightninglabs"
+            context: "./28/alpine"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
