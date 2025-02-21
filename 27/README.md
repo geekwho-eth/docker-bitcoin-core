@@ -12,7 +12,6 @@ This Docker image is built to run Bitcoin Core, leveraging a multi-stage build p
 - `27.0-ubuntu`, `27-ubuntu`, `latest` ([27/ubuntu/Dockerfile](https://github.com/geekwho-eth/docker-bitcoin-core/blob/master/27/ubuntu/Dockerfile))
 - `27.0-debian`, `27-debian`, `latest` ([27/debian/Dockerfile](https://github.com/geekwho-eth/docker-bitcoin-core/blob/master/27/debian/Dockerfile))
 - `27.0-alpine`, `27-alpine` ([27/alpine/Dockerfile](https://github.com/geekwho-eth/docker-bitcoin-core/blob/master/27/alpine/Dockerfile))
-- `27.0-alpine-tor`, `27-alpine-tor` ([27/alpine/tor/Dockerfile](https://github.com/geekwho-eth/docker-bitcoin-core/blob/master/27/alpine/tor/Dockerfile))
 
 Origin README.md pls see [ruimarinho/docker-bitcoin-core](https://github.com/ruimarinho/docker-bitcoin-core/blob/master/README.md)
 
