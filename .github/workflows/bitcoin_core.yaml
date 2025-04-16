@@ -45,8 +45,14 @@ jobs:
             context: "./28/debian"
           - name: 28-ubuntu
             context: "./28/ubuntu"
+          - name: 29-alpine
+            context: "./29/alpine"
+          - name: 29-debian
+            context: "./29/debian"
+          - name: 29-ubuntu
+            context: "./29/ubuntu"
           - name: latest
-            context: "./28/alpine"
+            context: "./29/alpine"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
