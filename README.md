@@ -4,7 +4,7 @@ This is a project that includes multiple images, each with its own features and 
 
 ## Image List
 
-- [Bitcoin Core Docker Image](27/README.md)
+- [Bitcoin Core Docker Image](29/README.md)
 
 ## Bitcoin Core Docker Image
 
@@ -20,4 +20,4 @@ Highlight:
 2. Run lnd as a non-root user.
 3. Resolve the user home directory permissions issue.
 
-[More Details](27/README.md)
+[More Details](29/README.md)
