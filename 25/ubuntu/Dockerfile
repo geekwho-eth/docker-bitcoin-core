@@ -37,12 +37,15 @@ FROM ubuntu:23.04
 ARG UID=101
 ARG GID=101
 
+# 设置环境变量
+ENV USER=bitcoin
+
 ENV BITCOIN_DATA=/home/bitcoin/.bitcoin
 ENV BITCOIN_VERSION=25.0
 ENV PATH=/opt/bitcoin-${BITCOIN_VERSION}/bin:$PATH
 
-RUN groupadd --gid ${GID} bitcoin \
-  && useradd --create-home --no-log-init -u ${UID} -g ${GID} bitcoin \
+RUN groupadd --system --gid ${GID} ${USER} \
+  && useradd --system --create-home --no-log-init -u ${UID} -g ${GID} ${USER} \
   && apt-get update -y \
   && apt-get install -y gosu --no-install-recommends \
   && apt-get clean \

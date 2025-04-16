@@ -92,12 +92,15 @@ FROM alpine
 ARG UID=100
 ARG GID=101
 
+# 设置环境变量
+ENV USER=bitcoin
+
 LABEL maintainer="GeekWho <caijiamx@gmail.com>"
 LABEL version="1.0"
 LABEL description="A bitcoin-core docker image"
 
-RUN addgroup bitcoin --gid ${GID} --system
-RUN adduser --uid ${UID} --system bitcoin --ingroup bitcoin
+RUN addgroup ${USER} --gid ${GID} --system
+RUN adduser --uid ${UID} --system bitcoin --ingroup ${USER}
 RUN sed -i 's/http\:\/\/dl-cdn.alpinelinux.org/https\:\/\/alpine.global.ssl.fastly.net/g' /etc/apk/repositories
 RUN apk --no-cache add \
   libevent \
