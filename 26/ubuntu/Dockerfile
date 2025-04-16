@@ -1,4 +1,4 @@
-FROM ubuntu:23.04 as builder
+FROM ubuntu:24.04 as builder
 
 LABEL maintainer="GeekWho <caijiamx@gmail.com>"
 LABEL version="1.0"
@@ -32,7 +32,7 @@ RUN set -ex \
   && rm -rf /opt/bitcoin-${BITCOIN_VERSION}/bin/bitcoin-qt
 
 # Second stage
-FROM ubuntu:23.04
+FROM ubuntu:24.04
 
 ARG UID=101
 ARG GID=101
