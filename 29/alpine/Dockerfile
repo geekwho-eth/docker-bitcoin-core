@@ -2,8 +2,9 @@
 FROM alpine:3.21 as bitcoin-core
 
 RUN sed -i 's/http\:\/\/dl-cdn.alpinelinux.org/https\:\/\/alpine.global.ssl.fastly.net/g' /etc/apk/repositories
-RUN apk --no-cache add autoconf
-RUN apk --no-cache add automake
+RUN apk --no-cache add ccache
+RUN apk --no-cache add cmake
+RUN apk --no-cache add clang18
 RUN apk --no-cache add boost-dev
 RUN apk --no-cache add build-base
 RUN apk --no-cache add chrpath
@@ -41,24 +42,27 @@ RUN set -ex \
 
 WORKDIR "${BITCOIN_SOURCE_DIR}/bitcoin-${BITCOIN_VERSION}"
 
-RUN sed -i s:sys/fcntl.h:fcntl.h: src/compat/compat.h
-RUN ./autogen.sh
-RUN ./configure LDFLAGS=-L`ls -d /opt/db*`/lib/ CPPFLAGS=-I`ls -d /opt/db*`/include/ \
-  --prefix=${BITCOIN_PREFIX} \
-  --mandir=/usr/share/man \
-  --disable-tests \
-  --disable-bench \
-  --disable-ccache \
-  --with-gui=no \
-  --with-utils \
-  --with-libs \
-  --with-sqlite=yes \
-  --with-daemon
-RUN make -j4
-RUN make install
-RUN strip ${BITCOIN_PREFIX}/bin/bitcoin-cli
-RUN strip ${BITCOIN_PREFIX}/bin/bitcoin-tx
-RUN strip ${BITCOIN_PREFIX}/bin/bitcoind
+# use cmake build 
+# https://github.com/bitcoin-core/bitcoin-devwiki/wiki/Autotools-to-CMake-Options-Mapping
+
+RUN cmake -B build \
+    -DBUILD_TESTS=OFF \
+    -DBUILD_BENCH=OFF \
+    -DWITH_CCACHE=ON \
+    -DBUILD_GUI=OFF \
+    -DBUILD_CLI=ON \
+    -DBUILD_TX=ON \
+    -DBUILD_UTIL=ON \
+    -DENABLE_WALLET=ON \
+    -DBUILD_DAEMON=ON \
+    # CMAKE VAR
+    -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+    -DCMAKE_CXX_COMPILER=clang++-18 \
+    -DCMAKE_C_COMPILER=clang-18 \
+    -DCMAKE_INSTALL_PREFIX:PATH="${BITCOIN_PREFIX}" && \
+    cmake --build build -j$(nproc) && \
+    strip build/bin/bitcoin-cli build/bin/bitcoin-tx build/bin/bitcoind && \
+    cmake --install build
 
 # Build stage for compiled artifacts
 FROM alpine:3.21
@@ -97,6 +101,6 @@ EXPOSE 8332 8333 18332 18333 18444
 
 ENTRYPOINT ["/entrypoint.sh"]
 
-RUN bitcoind -version | grep "Bitcoin Core version v${BITCOIN_VERSION}"
+RUN bitcoind -version | grep "Bitcoin Core daemon version v${BITCOIN_VERSION}"
 
 CMD ["bitcoind"]
