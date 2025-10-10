@@ -65,7 +65,7 @@ RUN cmake -B build \
   cmake --install build
 
 # Build stage for compiled artifacts
-FROM alpine:3.21
+FROM alpine:3.22
 
 ARG UID=100
 ARG GID=101
