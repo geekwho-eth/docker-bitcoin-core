@@ -1,6 +1,6 @@
 FROM ubuntu:24.04 as builder
 
-LABEL maintainer="GeekWho <caijiamx@gmail.com>"
+LABEL maintainer="GeekWho <geekwho_eth@outlook.com>"
 LABEL version="1.0"
 LABEL description="A bitcoin-core docker image"
 

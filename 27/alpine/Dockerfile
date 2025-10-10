@@ -34,7 +34,7 @@ RUN set -ex \
   && wget -O verify.py ${VERIFY_SCRIPT_URL} \
   && chmod +x verify.py \
   && ./verify.py bin SHA256SUMS \
-    "bitcoin-${BITCOIN_VERSION}.tar.gz" \
+  "bitcoin-${BITCOIN_VERSION}.tar.gz" \
   && mkdir -p ${BITCOIN_SOURCE_DIR} \
   && tar -xzf "bitcoin-${BITCOIN_VERSION}.tar.gz" -C ${BITCOIN_SOURCE_DIR} \
   && rm -rf ${SIGS_CLONE_DIR}
@@ -69,7 +69,7 @@ ARG GID=101
 # 设置环境变量
 ENV USER=bitcoin
 
-LABEL maintainer="GeekWho <caijiamx@gmail.com>"
+LABEL maintainer="GeekWho <geekwho_eth@outlook.com>"
 LABEL version="1.0"
 LABEL description="A bitcoin-core docker image"
 

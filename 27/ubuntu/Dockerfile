@@ -1,6 +1,6 @@
 FROM ubuntu:24.04 as builder
 
-LABEL maintainer="GeekWho <caijiamx@gmail.com>"
+LABEL maintainer="GeekWho <geekwho_eth@outlook.com>"
 LABEL version="1.0"
 LABEL description="A bitcoin-core docker image"
 
@@ -25,7 +25,7 @@ RUN set -ex \
   && curl -o verify.py ${VERIFY_SCRIPT_URL} \
   && chmod +x verify.py \
   && ./verify.py \
-    --min-good-sigs 6 pub "${BITCOIN_VERSION}-linux" \
+  --min-good-sigs 6 pub "${BITCOIN_VERSION}-linux" \
   && tar -xzf "${TMPDIR}.${BITCOIN_VERSION}-linux/bitcoin-${BITCOIN_VERSION}-${TARGETPLATFORM}.tar.gz" -C /opt \
   && rm -rf ${SIGS_CLONE_DIR} \
   && rm -rf ${TMPDIR} \

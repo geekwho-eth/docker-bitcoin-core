@@ -35,7 +35,7 @@ RUN set -ex \
   && wget -O verify.py ${VERIFY_SCRIPT_URL} \
   && chmod +x verify.py \
   && ./verify.py bin SHA256SUMS \
-    "bitcoin-${BITCOIN_VERSION}.tar.gz" \
+  "bitcoin-${BITCOIN_VERSION}.tar.gz" \
   && mkdir -p ${BITCOIN_SOURCE_DIR} \
   && tar -xzf "bitcoin-${BITCOIN_VERSION}.tar.gz" -C ${BITCOIN_SOURCE_DIR} \
   && rm -rf ${SIGS_CLONE_DIR}
@@ -46,23 +46,23 @@ WORKDIR "${BITCOIN_SOURCE_DIR}/bitcoin-${BITCOIN_VERSION}"
 # https://github.com/bitcoin-core/bitcoin-devwiki/wiki/Autotools-to-CMake-Options-Mapping
 
 RUN cmake -B build \
-    -DBUILD_TESTS=OFF \
-    -DBUILD_BENCH=OFF \
-    -DWITH_CCACHE=ON \
-    -DBUILD_GUI=OFF \
-    -DBUILD_CLI=ON \
-    -DBUILD_TX=ON \
-    -DBUILD_UTIL=ON \
-    -DENABLE_WALLET=ON \
-    -DBUILD_DAEMON=ON \
-    # CMAKE VAR
-    -DCMAKE_BUILD_TYPE=RelWithDebInfo \
-    -DCMAKE_CXX_COMPILER=clang++-18 \
-    -DCMAKE_C_COMPILER=clang-18 \
-    -DCMAKE_INSTALL_PREFIX:PATH="${BITCOIN_PREFIX}" && \
-    cmake --build build -j$(nproc) && \
-    strip build/bin/bitcoin-cli build/bin/bitcoin-tx build/bin/bitcoind && \
-    cmake --install build
+  -DBUILD_TESTS=OFF \
+  -DBUILD_BENCH=OFF \
+  -DWITH_CCACHE=ON \
+  -DBUILD_GUI=OFF \
+  -DBUILD_CLI=ON \
+  -DBUILD_TX=ON \
+  -DBUILD_UTIL=ON \
+  -DENABLE_WALLET=ON \
+  -DBUILD_DAEMON=ON \
+  # CMAKE VAR
+  -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+  -DCMAKE_CXX_COMPILER=clang++-18 \
+  -DCMAKE_C_COMPILER=clang-18 \
+  -DCMAKE_INSTALL_PREFIX:PATH="${BITCOIN_PREFIX}" && \
+  cmake --build build -j$(nproc) && \
+  strip build/bin/bitcoin-cli build/bin/bitcoin-tx build/bin/bitcoind && \
+  cmake --install build
 
 # Build stage for compiled artifacts
 FROM alpine:3.21
@@ -73,7 +73,7 @@ ARG GID=101
 # 设置环境变量
 ENV USER=bitcoin
 
-LABEL maintainer="GeekWho <caijiamx@gmail.com>"
+LABEL maintainer="GeekWho <geekwho_eth@outlook.com>"
 LABEL version="1.0"
 LABEL description="A bitcoin-core docker image"
 

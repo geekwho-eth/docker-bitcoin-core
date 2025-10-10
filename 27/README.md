@@ -77,7 +77,7 @@ Origin README.md pls see [ruimarinho/docker-bitcoin-core](https://github.com/rui
 For any issues or feedback, please contact the maintainer:
 
 - Maintainer: GeekWho
-- Email: caijiamx@gmail.com
+- Email: geekwho_eth@outlook.com
 
 ## Version Information
 
