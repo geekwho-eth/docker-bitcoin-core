@@ -17,6 +17,7 @@ RUN apk --no-cache add libtool
 RUN apk --no-cache add linux-headers
 RUN apk --no-cache add sqlite-dev
 RUN apk --no-cache add zeromq-dev
+RUN apk add --no-cache capnproto capnproto-dev
 
 ENV BITCOIN_VERSION=30.0
 ENV BITCOIN_PREFIX=/opt/bitcoin-${BITCOIN_VERSION}

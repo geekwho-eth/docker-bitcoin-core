@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     # use strategy matrix build images
     strategy:
+      max-parallel: 6 # Restrict to serial execution.
       matrix:
         image:
           - name: 25-alpine
