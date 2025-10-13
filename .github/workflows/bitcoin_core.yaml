@@ -5,10 +5,21 @@ on:
     branches:
       - master
       - dev
+    paths:
+      - '25/**'
+      - '26/**'
+      - '27/**'
+      - '28/**'
+      - '29/**'
+      - '30/**'
+      - '.github/workflows/bitcoin_core.yaml'
   workflow_dispatch:
     inputs:
       trigger:
         description: "Trigger the workflow manually"
+
+env:
+  LATEST_VERSION: "30-alpine"
 
 jobs:
   build:
@@ -56,8 +67,6 @@ jobs:
             context: "./30/debian"
           - name: 30-ubuntu
             context: "./30/ubuntu"
-          - name: latest
-            context: "./30/alpine"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -77,3 +86,12 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_REPO }}:${{ matrix.image.name }}
+      - name: Tag and push latest
+        if: matrix.image.name == env.LATEST_VERSION
+        run: |
+          # create latest tag & push
+          echo "Creating latest tag for ${{ env.LATEST_VERSION }}"
+          docker buildx imagetools create \
+            ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_REPO }}:${{ env.LATEST_VERSION }} \
+            --tag ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_REPO }}:latest
+          echo "Latest tag created successfully"
