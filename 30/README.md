@@ -58,6 +58,8 @@ Origin README.md pls see [ruimarinho/docker-bitcoin-core](https://github.com/rui
        -p 18333:18333 \
        -p 18444:18444 \
        bitcoin-core
+   # custom data path
+   # -v /path/to/bitcoin/:/home/bitcoin/.bitcoin/
    ```
 
 3. **Configuration**:
