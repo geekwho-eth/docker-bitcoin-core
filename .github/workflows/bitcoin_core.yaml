@@ -6,13 +6,13 @@ on:
       - master
       - dev
     paths:
-      - '25/**'
-      - '26/**'
-      - '27/**'
-      - '28/**'
-      - '29/**'
-      - '30/**'
-      - '.github/workflows/bitcoin_core.yaml'
+      - "25/**"
+      - "26/**"
+      - "27/**"
+      - "28/**"
+      - "29/**"
+      - "30/**"
+      - ".github/workflows/bitcoin_core.yaml"
   workflow_dispatch:
     inputs:
       trigger:
@@ -29,42 +29,42 @@ jobs:
       max-parallel: 6 # Restrict to serial execution.
       matrix:
         image:
-          - name: 25-alpine
-            context: "./25/alpine"
-          - name: 25-debian
-            context: "./25/debian"
-          - name: 25-ubuntu
-            context: "./25/ubuntu"
-          - name: 25-lightninglabs-alpine
-            context: "./25/alpine/lightninglabs"
-          - name: 26-alpine
-            context: "./26/alpine"
-          - name: 26-debian
-            context: "./26/debian"
-          - name: 26-ubuntu
-            context: "./26/ubuntu"
-          - name: 26-lightninglabs-alpine
-            context: "./26/alpine/lightninglabs"
-          - name: 27-alpine
-            context: "./27/alpine"
-          - name: 27-debian
-            context: "./27/debian"
-          - name: 28-alpine
-            context: "./28/alpine"
-          - name: 28-debian
-            context: "./28/debian"
-          - name: 28-ubuntu
-            context: "./28/ubuntu"
-          - name: 29-alpine
-            context: "./29/alpine"
-          - name: 29-debian
-            context: "./29/debian"
-          - name: 29-ubuntu
-            context: "./29/ubuntu"
+          #- name: 25-alpine
+          #  context: "./25/alpine"
+          #- name: 25-debian
+          #  context: "./25/debian"
+          #- name: 25-ubuntu
+          #  context: "./25/ubuntu"
+          #- name: 25-lightninglabs-alpine
+          #  context: "./25/alpine/lightninglabs"
+          #- name: 26-alpine
+          #  context: "./26/alpine"
+          #- name: 26-debian
+          #  context: "./26/debian"
+          #- name: 26-ubuntu
+          #  context: "./26/ubuntu"
+          #- name: 26-lightninglabs-alpine
+          #  context: "./26/alpine/lightninglabs"
+          #- name: 27-alpine
+          #  context: "./27/alpine"
+          #- name: 27-debian
+          #  context: "./27/debian"
+          #- name: 28-alpine
+          #  context: "./28/alpine"
+          #- name: 28-debian
+          #  context: "./28/debian"
+          #- name: 28-ubuntu
+          #  context: "./28/ubuntu"
+          #- name: 29-alpine
+          #  context: "./29/alpine"
+          #- name: 29-debian
+          #  context: "./29/debian"
+          #- name: 29-ubuntu
+          #  context: "./29/ubuntu"
           - name: 30-alpine
             context: "./30/alpine"
-          - name: 30-debian
-            context: "./30/debian"
+          - name: 30-centos
+            context: "./30/centos"
           - name: 30-ubuntu
             context: "./30/ubuntu"
     steps:
