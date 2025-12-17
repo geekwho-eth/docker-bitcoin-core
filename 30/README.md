@@ -10,7 +10,7 @@ This Docker image is built to run Bitcoin Core, leveraging a multi-stage build p
 ## Bitcoin Core Tags
 
 - `30-ubuntu` ([30/ubuntu/Dockerfile](https://github.com/geekwho-eth/docker-bitcoin-core/blob/master/30/ubuntu/Dockerfile))
-- `30-debian` ([30/debian/Dockerfile](https://github.com/geekwho-eth/docker-bitcoin-core/blob/master/30/debian/Dockerfile))
+- `30-centos` ([30/centos/Dockerfile](https://github.com/geekwho-eth/docker-bitcoin-core/blob/master/30/centos/Dockerfile))
 - `30-alpine` , `latest` ([30/alpine/Dockerfile](https://github.com/geekwho-eth/docker-bitcoin-core/blob/master/30/alpine/Dockerfile))
 
 Origin README.md pls see [ruimarinho/docker-bitcoin-core](https://github.com/ruimarinho/docker-bitcoin-core/blob/master/README.md)

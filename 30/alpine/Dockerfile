@@ -71,7 +71,7 @@ FROM alpine:3.22
 ARG UID=100
 ARG GID=101
 
-# 设置环境变量
+# set env
 ENV USER=bitcoin
 
 LABEL maintainer="GeekWho <geekwho_eth@outlook.com>"
