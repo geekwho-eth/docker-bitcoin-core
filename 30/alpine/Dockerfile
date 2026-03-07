@@ -1,5 +1,5 @@
 # Build stage for Bitcoin Core
-FROM alpine:3.22 as bitcoin-core
+FROM alpine:3.22 AS bitcoin-core
 
 RUN sed -i 's/http\:\/\/dl-cdn.alpinelinux.org/https\:\/\/alpine.global.ssl.fastly.net/g' /etc/apk/repositories
 RUN apk --no-cache add ccache
@@ -17,7 +17,8 @@ RUN apk --no-cache add libtool
 RUN apk --no-cache add linux-headers
 RUN apk --no-cache add sqlite-dev
 RUN apk --no-cache add zeromq-dev
-RUN apk add --no-cache capnproto capnproto-dev
+RUN apk --no-cache add capnproto capnproto-dev
+RUN apk --no-cache add lld
 
 ENV BITCOIN_VERSION=30.0
 ENV BITCOIN_PREFIX=/opt/bitcoin-${BITCOIN_VERSION}
@@ -57,7 +58,10 @@ RUN cmake -B build \
   -DENABLE_WALLET=ON \
   -DBUILD_DAEMON=ON \
   # CMAKE VAR
-  -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+  #-DCMAKE_BUILD_TYPE=RelWithDebInfo \
+  -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=lld" \
+  -DCMAKE_SHARED_LINKER_FLAGS="-fuse-ld=lld" \
+  -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_CXX_COMPILER=clang++-18 \
   -DCMAKE_C_COMPILER=clang-18 \
   -DCMAKE_INSTALL_PREFIX:PATH="${BITCOIN_PREFIX}" && \

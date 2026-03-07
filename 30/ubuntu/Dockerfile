@@ -1,4 +1,4 @@
-FROM ubuntu:24.04 as builder
+FROM ubuntu:24.04 AS builder
 
 LABEL maintainer="GeekWho <geekwho_eth@outlook.com>"
 LABEL version="1.0"
