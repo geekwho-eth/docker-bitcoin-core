@@ -61,6 +61,18 @@ jobs:
           #  context: "./29/debian"
           #- name: 29-ubuntu
           #  context: "./29/ubuntu"
+          - name: 27.1-alpine
+            context: "./27.1/alpine"
+          - name: 27.1-debian
+            context: "./27.1/debian"
+          - name: 27.1-ubuntu
+            context: "./27.1/ubuntu"
+          - name: 27.2-alpine
+            context: "./27.2/alpine"
+          - name: 27.2-debian
+            context: "./27.2/debian"
+          - name: 27.2-ubuntu
+            context: "./27.2/ubuntu"
           - name: 28.1-alpine
             context: "./28.1/alpine"
           - name: 28.1-debian
