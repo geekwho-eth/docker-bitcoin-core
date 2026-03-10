@@ -5,6 +5,7 @@ on:
     branches:
       - master
       - dev
+      - dev_build_tweak
     paths:
       - "25/**"
       - "26/**"
@@ -63,76 +64,76 @@ jobs:
           #  context: "./29/ubuntu"
           - name: 25.1-alpine
             context: "./25.1/alpine"
-          - name: 25.1-debian
-            context: "./25.1/debian"
-          - name: 25.1-ubuntu
-            context: "./25.1/ubuntu"
-          - name: 25.2-alpine
-            context: "./25.2/alpine"
-          - name: 25.2-debian
-            context: "./25.2/debian"
-          - name: 25.2-ubuntu
-            context: "./25.2/ubuntu"
-          - name: 26.1-alpine
-            context: "./26.1/alpine"
-          - name: 26.1-debian
-            context: "./26.1/debian"
-          - name: 26.1-ubuntu
-            context: "./26.1/ubuntu"
-          - name: 26.2-alpine
-            context: "./26.2/alpine"
-          - name: 26.2-debian
-            context: "./26.2/debian"
-          - name: 26.2-ubuntu
-            context: "./26.2/ubuntu"
-          - name: 27.1-alpine
-            context: "./27.1/alpine"
-          - name: 27.1-debian
-            context: "./27.1/debian"
-          - name: 27.1-ubuntu
-            context: "./27.1/ubuntu"
-          - name: 27.2-alpine
-            context: "./27.2/alpine"
-          - name: 27.2-debian
-            context: "./27.2/debian"
-          - name: 27.2-ubuntu
-            context: "./27.2/ubuntu"
-          - name: 28.1-alpine
-            context: "./28.1/alpine"
-          - name: 28.1-debian
-            context: "./28.1/debian"
-          - name: 28.1-ubuntu
-            context: "./28.1/ubuntu"
-          - name: 28.2-alpine
-            context: "./28.2/alpine"
-          - name: 28.2-debian
-            context: "./28.2/debian"
-          - name: 28.2-ubuntu
-            context: "./28.2/ubuntu"
-          - name: 28.3-alpine
-            context: "./28.3/alpine"
-          - name: 28.3-debian
-            context: "./28.3/debian"
-          - name: 28.3-ubuntu
-            context: "./28.3/ubuntu"
-          - name: 29.1-alpine
-            context: "./29.1/alpine"
-          - name: 29.1-debian
-            context: "./29.1/debian"
-          - name: 29.1-ubuntu
-            context: "./29.1/ubuntu"
-          - name: 29.2-alpine
-            context: "./29.2/alpine"
-          - name: 29.2-debian
-            context: "./29.2/debian"
-          - name: 29.2-ubuntu
-            context: "./29.2/ubuntu"
-          - name: 29.3-alpine
-            context: "./29.3/alpine"
-          - name: 29.3-debian
-            context: "./29.3/debian"
-          - name: 29.3-ubuntu
-            context: "./29.3/ubuntu"
+          # - name: 25.1-debian
+          #   context: "./25.1/debian"
+          # - name: 25.1-ubuntu
+          #   context: "./25.1/ubuntu"
+          # - name: 25.2-alpine
+          #   context: "./25.2/alpine"
+          # - name: 25.2-debian
+          #   context: "./25.2/debian"
+          # - name: 25.2-ubuntu
+          #   context: "./25.2/ubuntu"
+          # - name: 26.1-alpine
+          #   context: "./26.1/alpine"
+          # - name: 26.1-debian
+          #   context: "./26.1/debian"
+          # - name: 26.1-ubuntu
+          #   context: "./26.1/ubuntu"
+          # - name: 26.2-alpine
+          #   context: "./26.2/alpine"
+          # - name: 26.2-debian
+          #   context: "./26.2/debian"
+          # - name: 26.2-ubuntu
+          #   context: "./26.2/ubuntu"
+          # - name: 27.1-alpine
+          #   context: "./27.1/alpine"
+          # - name: 27.1-debian
+          #   context: "./27.1/debian"
+          # - name: 27.1-ubuntu
+          #   context: "./27.1/ubuntu"
+          # - name: 27.2-alpine
+          #   context: "./27.2/alpine"
+          # - name: 27.2-debian
+          #   context: "./27.2/debian"
+          # - name: 27.2-ubuntu
+          #   context: "./27.2/ubuntu"
+          # - name: 28.1-alpine
+          #   context: "./28.1/alpine"
+          # - name: 28.1-debian
+          #   context: "./28.1/debian"
+          # - name: 28.1-ubuntu
+          #   context: "./28.1/ubuntu"
+          # - name: 28.2-alpine
+          #   context: "./28.2/alpine"
+          # - name: 28.2-debian
+          #   context: "./28.2/debian"
+          # - name: 28.2-ubuntu
+          #   context: "./28.2/ubuntu"
+          # - name: 28.3-alpine
+          #   context: "./28.3/alpine"
+          # - name: 28.3-debian
+          #   context: "./28.3/debian"
+          # - name: 28.3-ubuntu
+          #   context: "./28.3/ubuntu"
+          # - name: 29.1-alpine
+          #   context: "./29.1/alpine"
+          # - name: 29.1-debian
+          #   context: "./29.1/debian"
+          # - name: 29.1-ubuntu
+          #   context: "./29.1/ubuntu"
+          # - name: 29.2-alpine
+          #   context: "./29.2/alpine"
+          # - name: 29.2-debian
+          #   context: "./29.2/debian"
+          # - name: 29.2-ubuntu
+          #   context: "./29.2/ubuntu"
+          # - name: 29.3-alpine
+          #   context: "./29.3/alpine"
+          # - name: 29.3-debian
+          #   context: "./29.3/debian"
+          # - name: 29.3-ubuntu
+          #   context: "./29.3/ubuntu"
           #- name: 30-alpine
           #  context: "./30/alpine"
           #- name: 30-centos
@@ -145,12 +146,12 @@ jobs:
           #  context: "./30.1/centos"
           #- name: 30.1-ubuntu
           #  context: "./30.1/ubuntu"
-          - name: 30.2-alpine
-            context: "./30.2/alpine"
-          - name: 30.2-centos
-            context: "./30.2/centos"
-          - name: 30.2-ubuntu
-            context: "./30.2/ubuntu"
+          # - name: 30.2-alpine
+          #   context: "./30.2/alpine"
+          # - name: 30.2-centos
+          #   context: "./30.2/centos"
+          # - name: 30.2-ubuntu
+          #   context: "./30.2/ubuntu"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -170,6 +171,8 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_REPO }}:${{ matrix.image.name }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
       - name: Tag and push latest
         if: matrix.image.name == env.LATEST_VERSION
         run: |

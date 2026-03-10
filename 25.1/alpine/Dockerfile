@@ -41,6 +41,11 @@ RUN set -ex \
 
 WORKDIR "${BITCOIN_SOURCE_DIR}/bitcoin-${BITCOIN_VERSION}"
 
+RUN apk add --no-cache ccache
+
+ENV CCACHE_DIR=/root/.ccache
+ENV PATH="/usr/lib/ccache/bin:$PATH"
+
 RUN sed -i s:sys/fcntl.h:fcntl.h: src/compat/compat.h
 RUN ./autogen.sh
 RUN ./configure LDFLAGS=-L`ls -d /opt/db*`/lib/ CPPFLAGS=-I`ls -d /opt/db*`/include/ \
@@ -48,13 +53,15 @@ RUN ./configure LDFLAGS=-L`ls -d /opt/db*`/lib/ CPPFLAGS=-I`ls -d /opt/db*`/incl
   --mandir=/usr/share/man \
   --disable-tests \
   --disable-bench \
-  --disable-ccache \
+  --disable-fuzz-binary \
+  --enable-ccache \
   --with-gui=no \
   --with-utils \
   --with-libs \
   --with-sqlite=yes \
   --with-daemon
-RUN make -j4
+RUN --mount=type=cache,target=/root/.ccache \
+make -j4
 RUN make install
 RUN strip ${BITCOIN_PREFIX}/bin/bitcoin-cli
 RUN strip ${BITCOIN_PREFIX}/bin/bitcoin-tx
