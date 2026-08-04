@@ -12,6 +12,7 @@ on:
       - "28/**"
       - "29/**"
       - "30/**"
+      - "31/**"
       - ".github/workflows/bitcoin_core.yaml"
   workflow_dispatch:
     inputs:
@@ -19,7 +20,7 @@ on:
         description: "Trigger the workflow manually"
 
 env:
-  LATEST_VERSION: "30-alpine"
+  LATEST_VERSION: "31.1-alpine"
 
 jobs:
   build:
@@ -61,78 +62,90 @@ jobs:
           #  context: "./29/debian"
           #- name: 29-ubuntu
           #  context: "./29/ubuntu"
-          - name: 25.1-alpine
-            context: "./25.1/alpine"
-          - name: 25.1-debian
-            context: "./25.1/debian"
-          - name: 25.1-ubuntu
-            context: "./25.1/ubuntu"
-          - name: 25.2-alpine
-            context: "./25.2/alpine"
-          - name: 25.2-debian
-            context: "./25.2/debian"
-          - name: 25.2-ubuntu
-            context: "./25.2/ubuntu"
-          - name: 26.1-alpine
-            context: "./26.1/alpine"
-          - name: 26.1-debian
-            context: "./26.1/debian"
-          - name: 26.1-ubuntu
-            context: "./26.1/ubuntu"
-          - name: 26.2-alpine
-            context: "./26.2/alpine"
-          - name: 26.2-debian
-            context: "./26.2/debian"
-          - name: 26.2-ubuntu
-            context: "./26.2/ubuntu"
-          - name: 27.1-alpine
-            context: "./27.1/alpine"
-          - name: 27.1-debian
-            context: "./27.1/debian"
-          - name: 27.1-ubuntu
-            context: "./27.1/ubuntu"
-          - name: 27.2-alpine
-            context: "./27.2/alpine"
-          - name: 27.2-debian
-            context: "./27.2/debian"
-          - name: 27.2-ubuntu
-            context: "./27.2/ubuntu"
-          - name: 28.1-alpine
-            context: "./28.1/alpine"
-          - name: 28.1-debian
-            context: "./28.1/debian"
-          - name: 28.1-ubuntu
-            context: "./28.1/ubuntu"
-          - name: 28.2-alpine
-            context: "./28.2/alpine"
-          - name: 28.2-debian
-            context: "./28.2/debian"
-          - name: 28.2-ubuntu
-            context: "./28.2/ubuntu"
-          - name: 28.3-alpine
-            context: "./28.3/alpine"
-          - name: 28.3-debian
-            context: "./28.3/debian"
-          - name: 28.3-ubuntu
-            context: "./28.3/ubuntu"
-          - name: 29.1-alpine
-            context: "./29.1/alpine"
-          - name: 29.1-debian
-            context: "./29.1/debian"
-          - name: 29.1-ubuntu
-            context: "./29.1/ubuntu"
-          - name: 29.2-alpine
-            context: "./29.2/alpine"
-          - name: 29.2-debian
-            context: "./29.2/debian"
-          - name: 29.2-ubuntu
-            context: "./29.2/ubuntu"
-          - name: 29.3-alpine
-            context: "./29.3/alpine"
-          - name: 29.3-debian
-            context: "./29.3/debian"
-          - name: 29.3-ubuntu
-            context: "./29.3/ubuntu"
+          #- name: 25.1-alpine
+          #  context: "./25.1/alpine"
+          #- name: 25.1-debian
+          #  context: "./25.1/debian"
+          #- name: 25.1-ubuntu
+          #  context: "./25.1/ubuntu"
+          #- name: 25.2-alpine
+          #  context: "./25.2/alpine"
+          #- name: 25.2-debian
+          #  context: "./25.2/debian"
+          #- name: 25.2-ubuntu
+          #  context: "./25.2/ubuntu"
+          #- name: 26.1-alpine
+          #  context: "./26.1/alpine"
+          #- name: 26.1-debian
+          #  context: "./26.1/debian"
+          #- name: 26.1-ubuntu
+          #  context: "./26.1/ubuntu"
+          #- name: 26.2-alpine
+          #  context: "./26.2/alpine"
+          #- name: 26.2-debian
+          #  context: "./26.2/debian"
+          #- name: 26.2-ubuntu
+          #  context: "./26.2/ubuntu"
+          #- name: 27.1-alpine
+          #  context: "./27.1/alpine"
+          #- name: 27.1-debian
+          #  context: "./27.1/debian"
+          #- name: 27.1-ubuntu
+          #  context: "./27.1/ubuntu"
+          #- name: 27.2-alpine
+          #  context: "./27.2/alpine"
+          #- name: 27.2-debian
+          #  context: "./27.2/debian"
+          #- name: 27.2-ubuntu
+          #  context: "./27.2/ubuntu"
+          #- name: 28.1-alpine
+          #  context: "./28.1/alpine"
+          #- name: 28.1-debian
+          #  context: "./28.1/debian"
+          #- name: 28.1-ubuntu
+          #  context: "./28.1/ubuntu"
+          #- name: 28.2-alpine
+          #  context: "./28.2/alpine"
+          #- name: 28.2-debian
+          #  context: "./28.2/debian"
+          #- name: 28.2-ubuntu
+          #  context: "./28.2/ubuntu"
+          #- name: 28.3-alpine
+          #  context: "./28.3/alpine"
+          #- name: 28.3-debian
+          #  context: "./28.3/debian"
+          #- name: 28.3-ubuntu
+          #  context: "./28.3/ubuntu"
+          - name: 28.4-alpine
+            context: "./28.4/alpine"
+          - name: 28.4-debian
+            context: "./28.4/debian"
+          - name: 28.4-ubuntu
+            context: "./28.4/ubuntu"
+          #- name: 29.1-alpine
+          #  context: "./29.1/alpine"
+          #- name: 29.1-debian
+          #  context: "./29.1/debian"
+          #- name: 29.1-ubuntu
+          #  context: "./29.1/ubuntu"
+          #- name: 29.2-alpine
+          #  context: "./29.2/alpine"
+          #- name: 29.2-debian
+          #  context: "./29.2/debian"
+          #- name: 29.2-ubuntu
+          #  context: "./29.2/ubuntu"
+          #- name: 29.3-alpine
+          #  context: "./29.3/alpine"
+          #- name: 29.3-debian
+          #  context: "./29.3/debian"
+          #- name: 29.3-ubuntu
+          #  context: "./29.3/ubuntu"
+          - name: 29.4-alpine
+            context: "./29.4/alpine"
+          - name: 29.4-debian
+            context: "./29.4/debian"
+          - name: 29.4-ubuntu
+            context: "./29.4/ubuntu"
           #- name: 30-alpine
           #  context: "./30/alpine"
           #- name: 30-centos
@@ -151,6 +164,24 @@ jobs:
             context: "./30.2/centos"
           - name: 30.2-ubuntu
             context: "./30.2/ubuntu"
+          - name: 30.3-alpine
+            context: "./30.3/alpine"
+          - name: 30.3-centos
+            context: "./30.3/centos"
+          - name: 30.3-ubuntu
+            context: "./30.3/ubuntu"
+          #- name: 31.0-alpine
+          #  context: "./31.0/alpine"
+          #- name: 31.0-centos
+          #  context: "./31.0/centos"
+          #- name: 31.0-ubuntu
+          #  context: "./31.0/ubuntu"
+          - name: 31.1-alpine
+            context: "./31.1/alpine"
+          - name: 31.1-centos
+            context: "./31.1/centos"
+          - name: 31.1-ubuntu
+            context: "./31.1/ubuntu"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
